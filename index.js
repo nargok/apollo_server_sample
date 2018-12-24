@@ -1,8 +1,10 @@
 const { ApolloServer, gql } = require('apollo-server-express');
 
-const {typeDefs} = require('./type_defs');
+const {typeDefs} = require('./type_defs.js');
+const resolvers = {};
+const {mocks} = require('./mock.js');
 
-const server = new ApolloServer({typeDefs, mocks: true});
+const server = new ApolloServer({typeDefs, resolvers, mocks});
 const express = require('express');
 const app = express();
 server.applyMiddleware({app, path: '/graphql'});

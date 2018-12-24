@@ -10,14 +10,14 @@ exports.typeDefs = gql`
     id: ID!
     title: String!
     content: String!
-    postedAt: String!
+    posted_at: String!
     comments: [Comment]!
   }
 
   type Comment {
     id: ID!
     content: String!
-    commentedAt: String!
+    commented_at: String!
     post: Post!
   }
 
