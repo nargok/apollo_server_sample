@@ -1,4 +1,4 @@
-const {gql} = require('apllo-server-express');
+const {gql} = require('apollo-server-express');
 
 exports.typeDefs = gql`
   type Query {
