@@ -1,4 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server-express');
+const { find } = require('lodash');
 
 const {typeDefs} = require('./type_defs.js');
 
@@ -18,6 +19,9 @@ const resolvers = {
     posts() {
       return posts;
     },
+    post(parent, args, context, infor) {
+      return find(posts, { id: args.id });
+    }
   },
   Post: {
     comments(post) {
